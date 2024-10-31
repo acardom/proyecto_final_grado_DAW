@@ -1,0 +1,1058 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: url("../img/fondo_login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+main {
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+}
+@media (min-width: 850px) {
+  main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.container_login {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+.container_login .container_back {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(252, 78, 93, 0.5137254902);
+}
+.container_login .container_back div {
+  margin: 100px 40px;
+  color: white;
+  transition: all 500ms;
+}
+.container_login .container_back div p,
+.container_login .container_back div button {
+  margin-top: 10px;
+}
+.container_login .container_back div h3 {
+  font-weight: 400;
+  font-size: 26px;
+}
+.container_login .container_back div button {
+  padding: 10px 40px;
+  border: 2px solid white;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  transition: all 300ms;
+}
+.container_login .container_back div button:hover {
+  background: white;
+  color: rgba(252, 78, 93, 0.5137254902);
+}
+.container_login .container_login_register {
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  left: 10px;
+  transition: left 500ms cubic-bezier(0.175, 0.45, 0.32, 1.275);
+}
+.container_login .container_login_register form {
+  width: 100%;
+  padding: 80px 20px;
+  background: white;
+  position: absolute;
+  border-radius: 20px;
+}
+.container_login .container_login_register form h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(252, 78, 93, 0.5137254902);
+}
+.container_login .container_login_register form input {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 16px;
+  outline: none;
+}
+.container_login .container_login_register form button {
+  padding: 10px 40px;
+  margin-top: 30px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.container_login .container_login_register .formulario_login {
+  opacity: 1;
+  display: block;
+}
+.container_login .container_login_register .formulario_register {
+  display: none;
+}
+.container_login .container_login_register .formulario_register .terminos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 20px;
+}
+.container_login .container_login_register .formulario_register .terminos input[type=checkbox] {
+  display: none;
+}
+.container_login .container_login_register .formulario_register .terminos label {
+  position: relative;
+  color: rgba(252, 78, 93, 0.5137254902);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+  border: 3px solid rgba(252, 78, 93, 0.5137254902);
+  padding: 1em 1em;
+  border-radius: 0.5em;
+}
+.container_login .container_login_register .formulario_register .terminos label a {
+  text-decoration: underline;
+}
+.container_login .container_login_register .formulario_register .terminos label:before {
+  content: "";
+  height: 1.5em;
+  width: 1.5em;
+  border: 3px solid rgba(252, 78, 93, 0.5137254902);
+}
+.container_login .container_login_register .formulario_register .terminos input[type=checkbox]:checked + label:before {
+  border: 2px solid #ffffff;
+  background-color: rgba(252, 78, 93, 0.5137254902);
+}
+.container_login .container_login_register .formulario_register .terminos input[type=checkbox]:checked + label {
+  width: 100%;
+  background-color: rgba(252, 78, 93, 0.5137254902);
+  color: #ffffff;
+}
+.container_login .container_login_register .formulario_register .Tipo_usuario {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+}
+.container_login .container_login_register .formulario_register .Tipo_usuario input[type=radio] {
+  display: none;
+}
+.container_login .container_login_register .formulario_register .Tipo_usuario label {
+  position: relative;
+  color: rgba(252, 78, 93, 0.5137254902);
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+  border: 3px solid rgba(252, 78, 93, 0.5137254902);
+  padding: 1em 2em;
+  border-radius: 0.5em;
+}
+.container_login .container_login_register .formulario_register .Tipo_usuario label:before {
+  content: "";
+  height: 1.5em;
+  width: 1.5em;
+  border: 3px solid rgba(252, 78, 93, 0.5137254902);
+  border-radius: 50%;
+}
+.container_login .container_login_register .formulario_register .Tipo_usuario input[type=radio]:checked + label:before {
+  height: 1em;
+  width: 1em;
+  border: 0.65em solid #ffffff;
+  background-color: rgba(252, 78, 93, 0.5137254902);
+}
+.container_login .container_login_register .formulario_register .Tipo_usuario input[type=radio]:checked + label {
+  background-color: rgba(252, 78, 93, 0.5137254902);
+  border: none;
+  padding: 1em 2em;
+  color: #ffffff;
+}
+
+@media (min-width: 850px) {
+  .container_login_register {
+    display: flex;
+    align-items: center;
+    top: -185px;
+  }
+}
+@media (max-width: 850px) {
+  main {
+    margin-top: 50px;
+  }
+  .container_back {
+    max-width: 350px;
+    height: 300px;
+    flex-direction: column;
+    margin: auto;
+    z-index: 1;
+  }
+  .container_back div {
+    margin: 0px;
+    position: absolute;
+  }
+  .container_login_register {
+    top: -10px;
+    left: -5px;
+    height: auto;
+    margin: auto;
+    z-index: 2;
+    display: block;
+    align-items: normal;
+  }
+  .container_login_register form {
+    position: relative;
+  }
+}
+.errores {
+  background-color: rgb(250, 87, 87);
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password2-container {
+  position: relative;
+}
+
+.show-password {
+  position: absolute;
+  right: 7px;
+  color: grey;
+  top: 60%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+  font-size: 35px;
+  text-decoration: line-through;
+}
+
+.password-input {
+  padding-right: 30px; /* Ajusta este valor según sea necesario */
+}
+
+.tabla_listado_alumnos {
+  position: absolute;
+  margin-top: 40px;
+  left: 50%;
+  transform: translate(-50%);
+  width: max-content;
+  padding: 15px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(252, 78, 93, 0.5137254902);
+  border-radius: 20px;
+}
+.tabla_listado_alumnos table {
+  max-width: 90%;
+}
+.tabla_listado_alumnos table tbody .listado_datos {
+  font-weight: normal;
+  border: 4px solid rgba(155, 38, 48, 0.514);
+  border-radius: 20px;
+  font-size: 100%;
+}
+.tabla_listado_alumnos table tbody button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+.tabla_listado_alumnos table tbody img {
+  width: 20px;
+}
+.tabla_listado_alumnos table thead th {
+  font-size: 100%;
+  border: 4px solid rgba(155, 38, 48, 0.514);
+  background-color: rgba(155, 38, 48, 0.514);
+  border-radius: 20px;
+}
+.tabla_listado_alumnos table th {
+  padding: 10px 30px;
+}
+
+.navbar {
+  background-color: rgba(184, 41, 53, 0.822);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 20px;
+}
+.navbar img {
+  width: 20px;
+  margin-right: 10px;
+}
+.navbar a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  font-size: 15px;
+}
+.navbar button {
+  color: white;
+  text-align: center;
+  padding: 10px 60px;
+  margin-right: 5px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 15px;
+}
+.navbar button:hover {
+  color: rgba(155, 38, 48, 0.514);
+  background: rgba(255, 255, 255, 0.616);
+}
+
+.navbar-links {
+  display: none;
+  position: absolute;
+  background-color: rgba(184, 41, 53, 0.822);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: fit-content; /* Ajusta el ancho al contenido */
+  right: 18px; /* Ajusta la posición a la derecha */
+  top: 75px; /* Ajusta la distancia desde la parte superior */
+}
+.navbar-links a {
+  text-align: left;
+  padding: 12px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+.navbar-links a:hover {
+  color: rgba(155, 38, 48, 0.514);
+  background: rgba(255, 255, 255, 0.616);
+}
+
+.curso_mas {
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+  padding-top: 1%;
+}
+.curso_mas button {
+  margin: auto;
+  width: 75%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 22px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  color: white;
+  cursor: pointer;
+  outline: 3px none;
+  font-weight: bold;
+}
+.curso_mas button:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.616);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+}
+
+.nuevo_curso {
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+  display: none;
+  padding-top: 1%;
+}
+.nuevo_curso form {
+  margin: auto;
+  width: 75%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  color: white;
+  font-weight: bold;
+}
+.nuevo_curso h3 {
+  margin-top: 20px;
+}
+.nuevo_curso input {
+  width: 90%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 16px;
+  outline: none;
+  border-radius: 20px;
+  text-align: center;
+}
+.nuevo_curso textarea {
+  width: 90%;
+  height: 100px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 16px;
+  outline: none;
+  border-radius: 20px;
+  text-align: center;
+}
+.nuevo_curso button {
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 40px;
+  width: 90%;
+  background: none;
+  color: white;
+  border: 4px solid white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.nuevo_curso button:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+}
+.nuevo_curso button::after {
+  content: "";
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(45deg) scale(0, 1);
+  transition: all 1s ease;
+}
+.nuevo_curso button:hover::after {
+  transition: all 1s ease-out;
+  transform: skewX(45deg) scale(1, 1);
+}
+
+.cursos_container {
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+}
+.cursos_container button {
+  margin: auto;
+  width: 75%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+.cursos_container button:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+}
+
+.cursos_container {
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+  padding-top: 1%;
+  margin-top: 10px;
+}
+.cursos_container button {
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 75%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+.cursos_container div:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+}
+
+.cursos_container2 {
+  margin: auto;
+  text-align: center;
+  padding-top: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.cursos_container2 .primero {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+.cursos_container2 .tercero {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+.cursos_container2 .tercero_2 {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+.cursos_container2 .cuarto {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9%;
+  margin-left: 1%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.452);
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+.cursos_container2 .cuarto button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+.cursos_container2 .cuarto img {
+  width: 80%;
+}
+.cursos_container2 .primero:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+}
+.cursos_container2 .primero:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+}
+.cursos_container2 .cuarto:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+}
+.cursos_container2 .tercero_2:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+}
+.cursos_container2 .segundo {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9%;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 1s ease;
+}
+.cursos_container2 .segundo button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+.cursos_container2 .segundo img {
+  width: 80%;
+}
+.cursos_container2 .segundo:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(155, 38, 48, 0.514);
+}
+
+.container_card {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.container_card .card_perfil {
+  position: relative;
+  width: 550px;
+  height: max-content;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+  margin: 40px;
+}
+.container_card .card_perfil .content_card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+}
+.container_card .card_perfil .content_card .img {
+  height: 40%;
+  margin-top: 40px;
+}
+.container_card .card_perfil .content_card .img img {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 30px;
+}
+.container_card .card_perfil .content_card span {
+  position: absolute;
+  width: 650px;
+  height: 300px;
+  background-color: rgba(155, 38, 48, 0.514);
+  backdrop-filter: blur(5px);
+  transform: rotate(-20deg);
+  top: -150px;
+  left: -80px;
+}
+.container_card .card_perfil .content_card h4 {
+  font-size: 40px;
+  color: #1a1919;
+  margin-bottom: 15px;
+}
+.container_card .card_perfil .content_card h6 {
+  font-size: 20px;
+  color: rgba(155, 38, 48, 0.514);
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.container_card .texto_perfil {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 65%;
+}
+.container_card .texto_perfil .borrar_perfil {
+  margin: auto;
+  width: 90%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 22px;
+  background: rgba(155, 38, 48, 0.514);
+  backdrop-filter: blur(5px);
+  border: 4px solid white;
+  color: white;
+  cursor: pointer;
+  outline: 3px none;
+  font-weight: bold;
+  margin-top: auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+.container_card .texto_perfil .borrar_perfil:hover {
+  border: 4px solid rgba(155, 38, 48, 0.514);
+  background-color: rgba(255, 255, 255, 0.452);
+  color: rgba(155, 38, 48, 0.514);
+  backdrop-filter: blur(5px);
+}
+.container_card .texto_perfil .modificar_perfil {
+  margin: auto;
+  width: 90%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 22px;
+  background: rgba(155, 38, 48, 0.514);
+  border: 4px solid white;
+  color: white;
+  cursor: pointer;
+  outline: 3px none;
+  font-weight: bold;
+  margin-top: auto;
+  margin-top: 30px;
+}
+.container_card .texto_perfil .modificar_perfil:hover {
+  border: 4px solid rgba(155, 38, 48, 0.514);
+  background-color: rgba(255, 255, 255, 0.452);
+  color: rgba(155, 38, 48, 0.514);
+  backdrop-filter: blur(5px);
+}
+.container_card .texto_perfil .modificar_guardar {
+  margin: auto;
+  width: 90%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 22px;
+  background: rgba(155, 38, 48, 0.514);
+  backdrop-filter: blur(5px);
+  border: 4px solid white;
+  color: white;
+  cursor: pointer;
+  outline: 3px none;
+  font-weight: bold;
+  margin-top: auto;
+  margin-top: 30px;
+  display: none;
+}
+.container_card .texto_perfil .modificar_guardar:hover {
+  border: 4px solid rgba(155, 38, 48, 0.514);
+  background-color: rgba(255, 255, 255, 0.452);
+  color: rgba(155, 38, 48, 0.514);
+  backdrop-filter: blur(5px);
+}
+.container_card .texto_perfil .camposModificacion {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  display: none;
+}
+.container_card .texto_perfil .camposModificacion input {
+  margin-bottom: 15px;
+}
+.container_card .texto_perfil .contraseña_perfil {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+.container_card .texto_perfil .contraseña_perfil .contraseña_puntos {
+  display: block;
+}
+.container_card .texto_perfil .contraseña_perfil .contraseña_real {
+  display: none;
+}
+.container_card .texto_perfil .contraseña_perfil div {
+  margin-left: 10px;
+  font-size: 30px;
+  color: rgba(155, 38, 48, 0.514);
+  margin-bottom: 5px;
+}
+.container_card .texto_perfil .contraseña_perfil .tachado {
+  text-decoration: line-through;
+  display: block;
+  cursor: pointer;
+}
+.container_card .texto_perfil .contraseña_perfil .mostrar {
+  display: none;
+  cursor: pointer;
+}
+.container_card .card_perfil .content_card p {
+  font-size: 13px;
+  color: #1a161f;
+  margin-top: 10px;
+}
+
+.archivo_mas {
+  margin: 0 auto;
+  text-align: center;
+  padding: 5px;
+  padding-top: 1%;
+}
+.archivo_mas button {
+  margin: auto;
+  width: 75%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 22px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  color: white;
+  cursor: pointer;
+  outline: 3px none;
+  font-weight: bold;
+}
+.archivo_mas button:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+  background: rgba(255, 255, 255, 0.616);
+  backdrop-filter: blur(5px);
+  border: 4px solid rgba(252, 78, 93, 0.5137254902);
+}
+
+.nuevo_archivo {
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+  display: none;
+  padding-top: 1%;
+}
+.nuevo_archivo form {
+  margin: auto;
+  width: 75%;
+  padding: 15px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(252, 78, 93, 0.5137254902);
+  backdrop-filter: blur(5px);
+  color: white;
+  font-weight: bold;
+}
+.nuevo_archivo h3 {
+  margin-top: 20px;
+}
+.nuevo_archivo input {
+  width: 90%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 16px;
+  outline: none;
+  border-radius: 20px;
+  text-align: center;
+}
+.nuevo_archivo input[type=file] {
+  color: black;
+  margin-top: 10px;
+}
+.nuevo_archivo textarea {
+  width: 90%;
+  height: 100px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 16px;
+  outline: none;
+  border-radius: 20px;
+  text-align: center;
+}
+.nuevo_archivo button {
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 40px;
+  width: 90%;
+  background: none;
+  color: white;
+  border: 4px solid white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.nuevo_archivo button:hover {
+  color: rgba(252, 78, 93, 0.5137254902);
+}
+.nuevo_archivo button::after {
+  content: "";
+  background: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(45deg) scale(0, 1);
+  transition: all 1s ease;
+}
+.nuevo_archivo button:hover::after {
+  transition: all 1s ease-out;
+  transform: skewX(45deg) scale(1, 1);
+}
+
+.encabezados_centrados {
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.pregunta_examen {
+  background-color: rgba(155, 38, 48, 0.514);
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  margin-top: 50px;
+}
+.pregunta_examen legend {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+.pregunta_examen input[type=radio] {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.aviso p {
+  text-align: center;
+}
+
+.terminar {
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+  padding-top: 1%;
+}
+.terminar .boton_terminar {
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: rgba(155, 38, 48, 0.514);
+  backdrop-filter: blur(5px);
+  font-size: 40px;
+  width: 90%;
+  color: white;
+  border: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+.terminar .boton_terminar:hover {
+  border: 4px solid rgba(155, 38, 48, 0.514);
+  background-color: rgba(255, 255, 255, 0.452);
+  backdrop-filter: blur(5px);
+  color: rgba(155, 38, 48, 0.514);
+}
+
+/*# sourceMappingURL=style.css.map */

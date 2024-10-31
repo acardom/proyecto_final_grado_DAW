@@ -1,0 +1,1212 @@
+@import 'variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url("../img/fondo_login.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+
+    @media (min-width: 850px) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+.container_login {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+
+    .container_back {
+        width: 100%;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+        background-color: $color_fondo_transparente;
+
+        div {
+            margin: 100px 40px;
+            color: white;
+            transition: all 500ms;
+
+            p,
+            button {
+                margin-top: 10px;
+            }
+
+            h3 {
+                font-weight: 400;
+                font-size: 26px;
+            }
+
+            button {
+                padding: 10px 40px;
+                border: 2px solid white;
+                background: transparent;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                color: white;
+                outline: none;
+                transition: all 300ms;
+            }
+
+            button:hover {
+                background: white;
+                color: $color_fondo_transparente;
+                
+            }
+        }
+    }
+
+    .container_login_register {
+        width: 100%;
+        max-width: 380px;
+        position: relative;
+        left: 10px;
+        transition: left 500ms cubic-bezier(0.175, 0.45, 0.320, 1.275);
+
+        form {
+            width: 100%;
+            padding: 80px 20px;
+            background: white;
+            position: absolute;
+            border-radius: 20px;
+
+            h2 {
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 20px;
+                color: $color_fondo_transparente;
+            }
+
+            input {
+                width: 100%;
+                margin-top: 20px;
+                padding: 10px;
+                border: none;
+                background: #f2f2f2;
+                font-size: 16px;
+                outline: none;
+            }
+
+            button {
+                padding: 10px 40px;
+                margin-top: 30px;
+                border: none;
+                font-size: 14px;
+                background: $color_fondo_transparente;
+                color: white;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+
+        .formulario_login {
+            opacity: 1;
+            display: block;
+        }
+
+        .formulario_register {
+            display: none;
+
+            .terminos {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                margin-top: 20px;
+
+                input[type="checkbox"] {
+                    display: none;
+                }
+
+                label {
+                    position: relative;
+                    color: $color_fondo_transparente;
+                    font-family: "Poppins", sans-serif;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.8em;
+                    border: 3px solid $color_fondo_transparente;
+                    padding: 1em 1em;
+                    border-radius: 0.5em;
+
+                    a {
+                        text-decoration: underline;
+                    }
+                }
+
+                label:before {
+                    content: "";
+                    height: 1.5em;
+                    width: 1.5em;
+                    border: 3px solid $color_fondo_transparente;
+                }
+
+                input[type="checkbox"]:checked+label:before {
+                    
+                    border: 2px solid #ffffff;
+                    background-color: $color_fondo_transparente;
+                }
+
+                input[type="checkbox"]:checked+label {
+                    width: 100%;
+                    background-color: $color_fondo_transparente;
+                    
+                    color: #ffffff;
+                }
+
+
+            }
+
+            .Tipo_usuario {
+                display: flex;
+                flex-direction: row;
+                align-items: center; 
+                margin-top: 30px;
+
+                input[type="radio"] {
+                    display: none;
+                }
+
+                label {
+                    position: relative;
+                    color: $color_fondo_transparente;
+                    font-family: "Poppins", sans-serif;
+                    cursor: pointer;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0.8em;
+                    border: 3px solid $color_fondo_transparente;
+                    padding: 1em 2em;
+                    border-radius: 0.5em;
+                }
+
+                label:before {
+                    content: "";
+                    height: 1.5em;
+                    width: 1.5em;
+                    border: 3px solid $color_fondo_transparente;
+                    border-radius: 50%;
+                }
+
+                input[type="radio"]:checked+label:before {
+                    height: 1em;
+                    width: 1em;
+                    border: 0.65em solid #ffffff;
+                    background-color: $color_fondo_transparente;
+                }
+
+                input[type="radio"]:checked+label {
+                    background-color: $color_fondo_transparente;
+                    border: none;
+                    padding: 1em 2em;
+                    color: #ffffff;
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: 850px) {
+    .container_login_register {
+        display: flex;
+        align-items: center;
+        top: -185px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    main {
+        margin-top: 50px;
+    }
+
+    .container_back {
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+        z-index: 1;
+
+        div {
+            margin: 0px;
+            position: absolute;
+        }
+    }
+
+    .container_login_register {
+        top: -10px;
+        left: -5px;
+        height: auto;
+        margin: auto;
+        z-index: 2;
+        display: block;
+        align-items: normal;
+
+        form {
+            position: relative;
+        }
+    }
+
+}
+
+.errores{
+    background-color: rgb(250, 87, 87);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password2-container {
+    position: relative;
+}
+
+.show-password {
+    position: absolute;
+    right: 7px;
+    color: grey;
+    top: 60%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    font-size: 35px;
+    text-decoration: line-through;
+}
+
+
+
+.password-input {
+    padding-right: 30px; /* Ajusta este valor según sea necesario */
+}
+
+
+.tabla_listado_alumnos{
+    position: absolute;
+    margin-top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    width: max-content;
+    padding: 15px;
+    backdrop-filter: blur(5px);
+    background-color: $color_fondo_transparente;
+    border-radius: 20px;
+    
+
+    table{
+        max-width: 90%;
+        tbody{
+            .listado_datos{
+                font-weight: normal; 
+                border: 4px solid $color_fondo_transparente_oscuro;
+                border-radius: 20px;
+                font-size: 100%;
+            }
+
+            button {      
+                border: none;
+                background: none;
+                cursor: pointer;
+                outline: none;
+            }
+
+            img{
+                width: 20px;
+            }
+        }
+
+        thead{
+            th{
+                font-size: 100%;
+                border: 4px solid $color_fondo_transparente_oscuro;
+                background-color: $color_fondo_transparente_oscuro;
+                border-radius: 20px;
+            }
+        }
+
+        th{
+            padding: 10px 30px; 
+        }
+        
+    }
+}
+
+
+.navbar {
+    background-color: $color_fondo_transparente_navbar;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+
+    img{
+        width: 20px;
+        margin-right: 10px;
+    }
+
+    a {
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        display: block;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    button {
+        color: white;
+        text-align: center;
+        padding: 10px 60px;
+        margin-right: 5px;
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    button:hover {
+        color: $color_fondo_transparente_oscuro;
+        background: $color_blanco_trans;
+    }
+
+    
+}
+
+
+.navbar-links {
+    display: none;
+    position: absolute;
+    background-color: $color_fondo_transparente_navbar;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: fit-content; /* Ajusta el ancho al contenido */
+    right: 18px; /* Ajusta la posición a la derecha */
+    top: 75px; /* Ajusta la distancia desde la parte superior */
+
+    a {
+        text-align: left;
+        padding: 12px;
+        text-decoration: none;
+        color: white;
+        display: block;
+    }
+
+    a:hover {
+        color: $color_fondo_transparente_oscuro;
+        background: $color_blanco_trans;
+    }
+}
+
+.curso_mas{
+    
+    margin: 0 auto; 
+    text-align: center;
+    padding: 5px;
+    padding-top: 1%;
+
+    button{
+        margin: auto;
+        width: 75%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 22px;
+        background: $color_fondo_transparente;
+        border: 4px solid $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        color: white;
+        cursor: pointer;
+        outline: 3px none;
+        font-weight: bold;
+    }
+
+    button:hover{
+        color: $color_fondo_transparente;
+        background: $color_blanco_trans;
+        backdrop-filter: blur(5px);
+        border: 4px solid $color_fondo_transparente;
+    }
+}
+
+.nuevo_curso{
+    margin: auto; 
+    text-align: center;
+    padding: 5px;
+    display: none;
+    padding-top: 1%;
+    
+
+    form{
+        margin: auto; 
+        width: 75%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        color: white;
+        font-weight: bold;
+    }
+
+    h3{
+        margin-top: 20px;
+    }
+
+    input{
+        width: 90%;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        background: #f2f2f2;
+        font-size: 16px;
+        outline: none;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    textarea{
+        width: 90%;
+        height: 100px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        background: #f2f2f2;
+        font-size: 16px;
+        outline: none;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    button{
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 40px;
+        width: 90%;
+        background: none; 
+        color: white; 
+        border: 4px solid white; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-radius: 20px; 
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: inline-block;
+
+    }
+
+    button:hover{
+        color: $color_fondo_transparente;
+    }
+
+    button::after{
+        content: "";
+        background: rgba(255, 255, 255, 0.452); 
+        backdrop-filter: blur(5px);
+        position: absolute;
+        z-index: -1;
+        padding: 16px 20px;
+        display: block;
+        left: -20%;
+        right: -20%;
+        top: 0;
+        bottom: 0;
+        transform: skewX(45deg) scale(0, 1);
+        transition: all 1s ease;
+    }
+
+    button:hover::after{
+        transition: all 1s ease-out;
+        transform: skewX(45deg) scale(1, 1);
+    }
+}
+
+.cursos_container{
+    margin: auto; 
+    text-align: center;
+    padding: 5px;
+
+    button{
+        margin: auto; 
+        width: 75%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: background-color 1s ease;
+    }
+
+    button:hover{
+        color: $color_fondo_transparente;
+        background: rgba(255, 255, 255, 0.452); 
+        backdrop-filter: blur(5px);
+        border: 4px solid $color_fondo_transparente;
+    }
+}
+
+.cursos_container{
+    margin: auto; 
+    text-align: center;
+    padding: 5px;
+    padding-top: 1%;
+    margin-top: 10px;
+
+    button{
+        min-height: 160px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto; 
+        width: 75%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: background-color 1s ease;
+    }
+
+    div:hover{
+        color: $color_fondo_transparente;
+        background: rgba(255, 255, 255, 0.452); 
+        backdrop-filter: blur(5px);
+        border: 4px solid $color_fondo_transparente;
+    }
+}
+
+.cursos_container2{
+    margin: auto; 
+    text-align: center;
+    padding-top: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .primero{
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 65%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: background-color 1s ease;
+    }
+
+    .tercero{
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 55%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: background-color 1s ease;
+    }
+
+    .tercero_2{
+        min-height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 55%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: background-color 1s ease;
+    }
+
+    .cuarto{
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 9%;
+        margin-left: 1%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.452);
+        cursor: pointer;
+        transition: background-color 1s ease;
+
+        button {      
+            border: none;
+            background: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        img{
+            width: 80%;
+        }
+    }
+
+    .primero:hover{
+        color: $color_fondo_transparente;
+        background: rgba(255, 255, 255, 0.452); 
+        backdrop-filter: blur(5px);
+        border: 4px solid $color_fondo_transparente;
+    }
+
+    .primero:hover{
+        color: $color_fondo_transparente;
+        background: rgba(255, 255, 255, 0.452); 
+        backdrop-filter: blur(5px);
+        border: 4px solid $color_fondo_transparente;
+    }
+
+    .cuarto:hover{
+        color: $color_fondo_transparente;
+        background: rgba(255, 255, 255, 0.452); 
+        backdrop-filter: blur(5px);
+        border: 4px solid $color_fondo_transparente;
+    }
+
+    .tercero_2:hover{
+        color: $color_fondo_transparente;
+        background: rgba(255, 255, 255, 0.452); 
+        backdrop-filter: blur(5px);
+        border: 4px solid $color_fondo_transparente;
+    }
+
+    .segundo{
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 9%;
+        margin-left: 1%;
+        margin-right: 1%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+        transition: background-color 1s ease;
+
+        button {      
+            border: none;
+            background: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        img{
+            width: 80%;
+        }
+    }
+
+    .segundo:hover{
+        color: $color_fondo_transparente;
+        background: rgba(255, 255, 255, 0.452);
+        backdrop-filter: blur(5px); 
+        border: 4px solid $color_fondo_transparente_oscuro;
+    }
+}
+
+.container_card{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    .card_perfil{
+        position: relative;
+        width: 550px;
+        height: max-content;
+        border-radius: 10px;
+        box-shadow: 2px 3px 5px rgba(73, 69, 52, 0.4);
+        margin: 40px;
+    }
+    
+    .card_perfil .content_card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;  
+        text-align: center;  
+        padding: 20px;
+        background: #fff;
+    }
+    
+    .card_perfil .content_card .img {
+        height: 40%;
+        margin-top: 40px;
+    }
+    
+    .card_perfil .content_card .img img {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        margin-bottom: 30px;
+    }
+    
+    .card_perfil .content_card span {
+        position: absolute;
+        width: 650px;
+        height: 300px;
+        background-color: $color_fondo_transparente_oscuro;
+        backdrop-filter: blur(5px);
+        transform: rotate(-20deg);
+        top: -150px;
+        left: -80px;
+    }
+    
+    .card_perfil .content_card h4 {
+        font-size: 40px;
+        color: #1a1919;
+        margin-bottom: 15px;
+    }
+    
+    .card_perfil .content_card h6 {
+        font-size: 20px;
+        color: $color_fondo_transparente_oscuro;
+        margin-bottom: 5px;
+        margin-top: 10px;
+        
+    }
+
+    .texto_perfil{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        height: 65%;
+
+        .borrar_perfil{
+            margin: auto;
+            width: 90%;
+            padding: 15px 15px;
+            border-radius: 20px;
+            border: none;
+            font-size: 22px;
+            background: $color_fondo_transparente_oscuro;
+            backdrop-filter: blur(5px);
+            border: 4px solid white;
+            color: white;
+            cursor: pointer;
+            outline: 3px none;
+            font-weight: bold;
+            margin-top: auto;
+            margin-bottom: 30px;
+            margin-top: 10px;
+        }
+
+        .borrar_perfil:hover{
+            border: 4px solid $color_fondo_transparente_oscuro;
+            background-color: rgba(255, 255, 255, 0.452);
+            color: $color_fondo_transparente_oscuro;
+            backdrop-filter: blur(5px);
+        }
+
+        .modificar_perfil{
+            margin: auto;
+            width: 90%;
+            padding: 15px 15px;
+            border-radius: 20px;
+            border: none;
+            font-size: 22px;
+            background: $color_fondo_transparente_oscuro;
+            border: 4px solid white;
+            color: white;
+            cursor: pointer;
+            outline: 3px none;
+            font-weight: bold;
+            margin-top: auto;
+            margin-top: 30px;
+        }
+
+        .modificar_perfil:hover{
+            border: 4px solid $color_fondo_transparente_oscuro;
+            background-color: rgba(255, 255, 255, 0.452);
+            color: $color_fondo_transparente_oscuro;
+            backdrop-filter: blur(5px);
+        }
+
+        .modificar_guardar{
+            margin: auto;
+            width: 90%;
+            padding: 15px 15px;
+            border-radius: 20px;
+            border: none;
+            font-size: 22px;
+            background: $color_fondo_transparente_oscuro;
+            backdrop-filter: blur(5px);
+            border: 4px solid white;
+            color: white;
+            cursor: pointer;
+            outline: 3px none;
+            font-weight: bold;
+            margin-top: auto;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .modificar_guardar:hover{
+            border: 4px solid $color_fondo_transparente_oscuro;
+            background-color: rgba(255, 255, 255, 0.452);
+            color: $color_fondo_transparente_oscuro;
+            backdrop-filter: blur(5px);
+        }
+
+        .camposModificacion{
+            margin-top: 40px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            display: none;
+
+            input{
+                margin-bottom: 15px;
+            }
+        }
+
+        .contraseña_perfil{
+
+            display: flex;
+            flex-direction: row;
+            margin-left: auto; 
+            margin-right: auto;
+            align-items: center;
+    
+            .contraseña_puntos{
+                display: block;
+            }
+    
+            .contraseña_real{
+                display: none;
+            }
+    
+            div{
+                margin-left: 10px;
+                font-size: 30px;
+                color: $color_fondo_transparente_oscuro;
+                margin-bottom: 5px;
+
+            }
+    
+            .tachado{
+                text-decoration: line-through;
+                display: block;
+                cursor: pointer;
+            }
+    
+            .mostrar{
+                display: none;
+                cursor: pointer;
+            }
+    }
+
+    }
+    
+    .card_perfil .content_card p {
+        font-size: 13px;
+        color: #1a161f;
+        margin-top: 10px;
+    }
+}
+
+.archivo_mas{
+    
+    margin: 0 auto; 
+    text-align: center;
+    padding: 5px;
+    padding-top: 1%;
+
+    button{
+        margin: auto;
+        width: 75%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 22px;
+        background: $color_fondo_transparente;
+        border: 4px solid $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        color: white;
+        cursor: pointer;
+        outline: 3px none;
+        font-weight: bold;
+    }
+
+    button:hover{
+        color: $color_fondo_transparente;
+        background: $color_blanco_trans;
+        backdrop-filter: blur(5px);
+        border: 4px solid $color_fondo_transparente;
+        
+    }
+}
+
+.nuevo_archivo{
+    margin: auto; 
+    text-align: center;
+    padding: 5px;
+    display: none;
+    padding-top: 1%;
+    
+
+    form{
+        margin: auto; 
+        width: 75%;
+        padding: 15px 15px;
+        border-radius: 20px;
+        border: none;
+        font-size: 14px;
+        background: $color_fondo_transparente;
+        backdrop-filter: blur(5px);
+        color: white;
+        font-weight: bold;
+    }
+
+    h3{
+        margin-top: 20px;
+    }
+
+    input{
+        width: 90%;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        background: #f2f2f2;
+        font-size: 16px;
+        outline: none;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    input[type="file"] {
+        color: black;
+        margin-top: 10px;
+    }
+
+
+    textarea{
+        width: 90%;
+        height: 100px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        background: #f2f2f2;
+        font-size: 16px;
+        outline: none;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    button{
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 40px;
+        width: 90%;
+        background: none; 
+        color: white; 
+        border: 4px solid white; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-radius: 20px; 
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: inline-block;
+
+    }
+
+    button:hover{
+        color: $color_fondo_transparente;
+    }
+
+    button::after{
+        content: "";
+        background: rgba(255, 255, 255, 0.452); 
+        backdrop-filter: blur(5px);
+        position: absolute;
+        z-index: -1;
+        padding: 16px 20px;
+        display: block;
+        left: -20%;
+        right: -20%;
+        top: 0;
+        bottom: 0;
+        transform: skewX(45deg) scale(0, 1);
+        transition: all 1s ease;
+    }
+
+    button:hover::after{
+        transition: all 1s ease-out;
+        transform: skewX(45deg) scale(1, 1);
+    }
+}
+
+.encabezados_centrados{
+    text-align: center;
+    text-decoration:underline;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.pregunta_examen{
+    background-color: $color_fondo_transparente_oscuro;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    font-weight: bold;
+    color: white;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    margin-top: 50px;
+
+    legend{
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+    }
+
+    input[type="radio"]{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.aviso{
+
+        p{
+            text-align: center;
+        }
+    
+}
+
+
+
+.terminar{
+
+    margin: auto; 
+    text-align: center;
+    padding: 5px;
+    padding-top: 1%;
+
+    .boton_terminar{
+
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        background-color: $color_fondo_transparente_oscuro;
+        backdrop-filter: blur(5px);
+        font-size: 40px;
+        width: 90%;
+        color: white; 
+        border: none; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border-radius: 20px; 
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: inline-block;
+        cursor: pointer;
+        
+    }
+
+    .boton_terminar:hover{
+
+        border: 4px solid $color_fondo_transparente_oscuro;
+        background-color: rgba(255, 255, 255, 0.452);
+        backdrop-filter: blur(5px);
+        color: $color_fondo_transparente_oscuro;
+        
+    }
+}
